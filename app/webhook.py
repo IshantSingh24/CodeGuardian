@@ -7,8 +7,21 @@ async def github_webhook(request: Request):
 
     payload = await request.json()
 
-    print("\n========== WEBHOOK RECEIVED ==========")
-    print(payload)
-    print("======================================\n")
+    action = payload.get("action")
+
+    if action != "opened":
+        return {"status": "ignored"}
+
+    repo = payload["repository"]["full_name"]
+    pr_number = payload["pull_request"]["number"]
+    diff_url = payload["pull_request"]["diff_url"]
+    head_sha = payload["pull_request"]["head"]["sha"]
+
+    print("\n====== PR INFO ======")
+    print("Repo:", repo)
+    print("PR:", pr_number)
+    print("Diff URL:", diff_url)
+    print("SHA:", head_sha)
+    print("=====================\n")
 
     return {"status": "received"}
