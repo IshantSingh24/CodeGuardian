@@ -8,8 +8,9 @@ async def github_webhook(request: Request):
     payload = await request.json()
 
     action = payload.get("action")
+    print("ACTION =", action)
 
-    if action != "opened":
+    if action not in ["opened", "synchronize"]:
         return {"status": "ignored"}
 
     repo = payload["repository"]["full_name"]
