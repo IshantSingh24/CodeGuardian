@@ -1,0 +1,2 @@
+# Security agent prompt
+Perform basic security checks and report findings.

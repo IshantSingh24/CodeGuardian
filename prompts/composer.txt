@@ -1,0 +1,2 @@
+# Composer agent prompt
+Combine agent outputs into a single actionable summary.
