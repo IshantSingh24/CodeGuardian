@@ -1,12 +1,15 @@
-"""Graph state placeholder.
-Holds simple state structures for workflow graphs.
-"""
+from typing import TypedDict
+
+from agents.security_agent import SecurityReview
+from agents.quality_agent import QualityReview
 
 
-class State:
-    def __init__(self, name: str, data: dict | None = None):
-        self.name = name
-        self.data = data or {}
+class ReviewState(TypedDict):
 
-    def __repr__(self):
-        return f"State(name={self.name!r})"
+    diff: str
+
+    security_result: SecurityReview | None
+
+    quality_result: QualityReview | None
+
+    final_review: str

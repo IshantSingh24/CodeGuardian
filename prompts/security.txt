@@ -14,18 +14,8 @@ Focus ONLY on:
 8. Unsafe deserialization
 9. Authentication issues
 
-Return:
+Only report real vulnerabilities.
 
-Severity: Low/Medium/High
+Do not report style issues.
 
-Findings:
-- finding 1
-- finding 2
-
-Recommendations:
-- recommendation 1
-- recommendation 2
-
-If no issue exists, clearly say:
-
-"No security issues found."
+Be concise.
