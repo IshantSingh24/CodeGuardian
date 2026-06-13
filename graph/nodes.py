@@ -27,7 +27,7 @@ def quality_node(state: ReviewState):
     }
 
 
-def composer_node(state: ReviewState):
+def composer_node(state):
 
     review = composer_agent(
         state["security_result"],
